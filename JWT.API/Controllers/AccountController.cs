@@ -1,4 +1,5 @@
 ﻿using JWT.API.DTOs;
+using JWT.API.Entities;
 using JWT.API.Services;
 using JWT.API.Utilities;
 using Microsoft.AspNetCore.Http;
@@ -21,14 +22,16 @@ namespace JWT.API.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Register([FromServices]UserManager<IdentityUser> _userManager,RegisterDTO registerDTO)
+        public async Task<IActionResult> Register([FromServices]UserManager<AppUser> _userManager,RegisterDTO registerDTO)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var user = new IdentityUser()
+            var user = new AppUser()
             {
+                FirstName =registerDTO.FirstName,
+                LastName =registerDTO.LastName,
                 Email = registerDTO.Email,
                 UserName = registerDTO.Email,
                 EmailConfirmed = true
@@ -50,7 +53,7 @@ namespace JWT.API.Controllers
         }
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Login([FromServices]SignInManager<IdentityUser> _signInManager,LoginDTO loginDTO)
+        public async Task<IActionResult> Login([FromServices]SignInManager<AppUser> _signInManager,LoginDTO loginDTO)
         {
             if (!ModelState.IsValid)
             {

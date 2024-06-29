@@ -1,4 +1,5 @@
 ﻿using JWT.API.Context;
+using JWT.API.Entities;
 using JWT.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -25,7 +26,7 @@ namespace JWT.API.Extention
                 ValidateLifetime = true,
                 ValidateIssuerSigningKey = false
             });
-            services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<JwtContext>().AddDefaultTokenProviders();
+            services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<JwtContext>().AddDefaultTokenProviders();
             services.AddScoped<IJwtService,JwtService>();
             return services;
         }

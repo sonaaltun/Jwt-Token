@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using JWT.API.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -16,7 +17,7 @@ namespace JWT.API.Services
             _jwtOptions = options.Value;
         }
 
-        public string GenerateJwtToken(IdentityUser user)
+        public string GenerateJwtToken(AppUser user)
         {
             Claim[] claims = new Claim[]
             {

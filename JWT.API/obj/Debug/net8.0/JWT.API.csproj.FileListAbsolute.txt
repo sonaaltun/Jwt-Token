@@ -142,3 +142,4 @@ C:\Users\sonaa\source\repos\JWT\JWT.API\obj\Debug\net8.0\refint\JWT.API.dll
 C:\Users\sonaa\source\repos\JWT\JWT.API\obj\Debug\net8.0\JWT.API.pdb
 C:\Users\sonaa\source\repos\JWT\JWT.API\obj\Debug\net8.0\JWT.API.genruntimeconfig.cache
 C:\Users\sonaa\source\repos\JWT\JWT.API\obj\Debug\net8.0\ref\JWT.API.dll
+C:\Users\sonaa\source\repos\JWT\JWT.API\obj\Debug\net8.0\JWT.API.sourcelink.json
